@@ -21,8 +21,10 @@ const endpoints = [
 ];
 
 // Load station names once
-const stationsData = JSON.parse(fs.readFileSync("stations.json", "utf8"));
-const stopsData = JSON.parse(fs.readFileSync("stops.json", "utf8"));
+const stationsData = JSON.parse(
+  fs.readFileSync("public/stations.json", "utf8")
+);
+const stopsData = JSON.parse(fs.readFileSync("public/stops.json", "utf8"));
 
 app.get("/api/stations", (req, res) => {
   try {
