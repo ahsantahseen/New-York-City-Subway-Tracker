@@ -1,3 +1,6 @@
 node_modules
 notes
 .env
+vercel.json
+.vscode
+.vercel
