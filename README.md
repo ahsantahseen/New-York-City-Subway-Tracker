@@ -13,7 +13,6 @@ A Node.js Express API that provides real-time NYC subway arrival information usi
 ## Prerequisites
 
 - Node.js
-- MTA API Key (obtain from [MTA's Real-Time Data Feeds](https://api.mta.info/))
 
 ## Setup
 
