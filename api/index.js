@@ -2,7 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const fs = require("fs");
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
-const serverless = require("serverless-http");
+
 const path = require("path");
 
 const app = express();
@@ -130,5 +130,7 @@ app.post("/station-updates/", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
+app.listen(port, () => {
+  console.log(`App is running on port ${port}`);
+});
 module.exports = serverless(app);
