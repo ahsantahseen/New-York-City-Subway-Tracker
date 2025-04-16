@@ -23,6 +23,12 @@ A Node.js Express API that provides real-time NYC subway arrival information usi
 npm install
 ```
 
+3. Execute
+
+```bash
+node api/index.js
+```
+
 ## API Endpoints
 
 ### 1. Get Station List
