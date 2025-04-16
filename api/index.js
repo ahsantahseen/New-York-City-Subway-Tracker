@@ -133,4 +133,3 @@ app.post("/station-updates/", async (req, res) => {
 app.listen(port, () => {
   console.log(`App is running on port ${port}`);
 });
-module.exports = serverless(app);
