@@ -33,7 +33,6 @@ const stopsData = JSON.parse(
 app.get("/api/stations", (req, res) => {
   try {
     let stationsNames = [];
-    const stationsData = JSON.parse(fs.readFileSync("stations.json", "utf8"));
     for (const key in stationsData) {
       stationsNames.push(stationsData[key].name);
     }
