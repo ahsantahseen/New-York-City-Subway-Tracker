@@ -3,6 +3,7 @@ const axios = require("axios");
 const fs = require("fs");
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
 const serverless = require("serverless-http");
+const path = require("path");
 
 const app = express();
 app.use(express.json());
