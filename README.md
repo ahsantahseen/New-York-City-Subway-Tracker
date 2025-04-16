@@ -23,12 +23,6 @@ A Node.js Express API that provides real-time NYC subway arrival information usi
 npm install
 ```
 
-3. Set up environment variables:
-
-```bash
-export MTA_API_KEY=your_api_key_here
-```
-
 ## API Endpoints
 
 ### 1. Get Station List
