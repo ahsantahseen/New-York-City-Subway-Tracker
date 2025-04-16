@@ -22,6 +22,25 @@ const endpoints = [
   "nyct%2Fgtfs",
 ];
 
+function convertGtfsTime(gtfsTime) {
+  try {
+    // Handle Protocol Buffers timestamp format
+    const timestamp = gtfsTime?.low || gtfsTime;
+    if (!timestamp) return null;
+
+    // Convert to milliseconds (GTFS timestamps are in seconds)
+    const date = new Date(timestamp * 1000);
+
+    // Validate the date
+    if (isNaN(date.getTime())) return null;
+
+    return date;
+  } catch (e) {
+    console.error("Error converting GTFS time:", e);
+    return null;
+  }
+}
+
 const stationsData = JSON.parse(
   fs.readFileSync(path.join(__dirname, "data", "stations.json"), "utf8")
 );
@@ -112,9 +131,7 @@ app.post("/station-updates/", async (req, res) => {
               parentStation: parentStation,
               fullStopId: stopTimeUpdate.stopId,
               stopId: strippedStopId,
-              arrivalTime: new Date(
-                stopTimeUpdate.arrival?.time?.low * 1000
-              ).toLocaleString(),
+              arrivalTime: convertGtfsTime(stopTimeUpdate.arrival?.time),
             });
           });
         });
