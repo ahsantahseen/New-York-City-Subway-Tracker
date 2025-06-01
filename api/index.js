@@ -1,4 +1,5 @@
 const express = require("express");
+const serverless = require("serverless-http");
 const axios = require("axios");
 const fs = require("fs");
 const GtfsRealtimeBindings = require("gtfs-realtime-bindings");
@@ -49,7 +50,7 @@ const stopsData = JSON.parse(
   fs.readFileSync(path.join(__dirname, "data", "stops.json"), "utf8")
 );
 
-app.get("/api/stations", (req, res) => {
+app.get("/stations", (req, res) => {
   try {
     let stationsNames = [];
     for (const key in stationsData) {
@@ -146,6 +147,4 @@ app.post("/station-updates/", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-app.listen(port, () => {
-  console.log(`App is running on port ${port}`);
-});
+module.exports = app;
