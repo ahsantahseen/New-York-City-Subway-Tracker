@@ -34,7 +34,7 @@ node api/index.js
 ### 1. Get Station List
 
 ```
-GET /api/stations
+GET /stations
 ```
 
 Returns a list of all subway stations.
