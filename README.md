@@ -1,6 +1,6 @@
 # New York City Subway Arrival Tracker
 
-A Node.js Express API that provides real-time NYC subway arrival information using MTA's GTFS feeds.
+A Simple Web App that provides real-time NYC subway arrival information using MTA's GTFS feeds.
 
 ## Features
 
